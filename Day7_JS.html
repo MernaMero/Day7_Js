@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 7 - JavaScript Assignments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .task {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            border-radius: 4px;
+        }
+        .task h2 {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+        }
+        .divider {
+            border-top: 2px solid #007BFF;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Day 7 - JavaScript Assignments</h1>
+
+        <!-- Task 1: Modify Array Elements & Length -->
+        <div class="task">
+            <h2>Task 1: Modify Array Elements & Length</h2>
+            <button onclick="modifyArray()">Run Task 1</button>
+            <div id="task1Result" class="result"></div>
+        </div>
+        <div class="divider"></div>
+
+        <!-- Task 2: Filter and Map Array Elements -->
+        <div class="task">
+            <h2>Task 2: Filter and Map Array Elements</h2>
+            <button onclick="filterAndMap()">Run Task 2</button>
+            <div id="task2Result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Task 1: Modify Array Elements & Length
+        function modifyArray() {
+            // نبدأ بمجموعة فواكه
+            let fruits = ["apple", "banana", "orange"];
+            let result = `Initial array: ${fruits.join(", ")}<br>`;
+
+            // push(): بنضيف فاكهة جديدة للنهاية
+            fruits.push("grape");
+            result += `After push("grape"): ${fruits.join(", ")}<br>`;
+
+            // pop(): بنشيل آخر فاكهة
+            fruits.pop();
+            result += `After pop(): ${fruits.join(", ")}<br>`;
+
+            // shift(): بنشيل أول فاكهة
+            fruits.shift();
+            result += `After shift(): ${fruits.join(", ")}<br>`;
+
+            // unshift(): بنضيف فاكهة جديدة للبداية
+            fruits.unshift("kiwi");
+            result += `After unshift("kiwi"): ${fruits.join(", ")}<br>`;
+
+            // بنعرض النتيجة في الصفحة
+            document.getElementById("task1Result").innerHTML = result;
+        }
+        // الشرح: الفنكشن دي بتعرض كيف بنعدل على الـ Array باستخدام push, pop, shift, unshift.
+
+        // Task 2: Filter and Map Array Elements
+        function filterAndMap() {
+            // نبدأ بمجموعة أرقام
+            let numbers = [1, 2, 3, 4, 5, 6];
+            let result = `Initial array: ${numbers.join(", ")}<br>`;
+
+            // filter(): بنعمل array جديدة فيها الأرقام الزوجية بس
+            let evenNumbers = numbers.filter(num => num % 2 === 0);
+            result += `Even numbers: ${evenNumbers.join(", ")}<br>`;
+
+            // map(): بنحسب مربع كل رقم في الـ array الجديدة
+            let squaredNumbers = evenNumbers.map(num => num * num);
+            result += `Squared numbers: ${squaredNumbers.join(", ")}<br>`;
+
+            // بنعرض النتيجة في الصفحة
+            document.getElementById("task2Result").innerHTML = result;
+        }
+        // الشرح: الفنكشن دي بتستخدم filter علشان نختار الأرقام الزوجية، و map علشان نحسب مربع كل رقم.
+    </script>
+</body>
+</html>
